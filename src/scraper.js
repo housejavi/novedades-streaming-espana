@@ -134,6 +134,10 @@ function parsearPaginaNuevo(html, { slug, tipo }) {
       const alt = ($el.find('img[alt]').first().attr('alt') || '').trim();
       if (!alt) return;
 
+      // La URL del póster viene directamente en el src de la imagen
+      // (confirmado en datos reales: https://images.justwatch.com/poster/...).
+      const posterUrl = $el.find('img[alt]').first().attr('src') || null;
+
       const tipoDetectado = href.includes('/serie/') ? 'series' : 'movie';
       // Usamos la URL completa como identificador de caché, no solo el
       // último tramo — en series, ese último tramo es a menudo algo
@@ -146,6 +150,7 @@ function parsearPaginaNuevo(html, { slug, tipo }) {
         titulo: alt,
         jwSlugTitulo,
         jwHref: href,
+        posterUrl,
         tipo: tipoDetectado,
         fechaIncorporacion: fechaActual.toISOString().slice(0, 10),
         plataformaSlug: slug,
