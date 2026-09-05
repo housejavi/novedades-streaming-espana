@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  addon:
+    build: .
+    ports:
+      - "7000:7000"
+    environment:
+      - PORT=7000
+      - TMDB_API_KEY=${TMDB_API_KEY}
+      - CACHE_TTL_MINUTES=45
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
