@@ -78,9 +78,9 @@ async function construirCatalogo({ platformId, contentType, dias }) {
       id: imdbId,
       type: STREMIO_TIPO[contentType],
       name: item.titulo,
-      // Nota: no tenemos poster propio; Stremio/Cinemeta completará
-      // el resto de metadatos (poster, sinopsis) a partir del imdbId
-      // en la vista de detalle. Para el listado, esto es suficiente.
+      // Póster real de JustWatch — sin esto, Stremio/Nuvio muestran
+      // las carátulas en blanco (confirmado: era justo lo que faltaba).
+      poster: item.posterUrl || undefined,
     });
   }
 
