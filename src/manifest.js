@@ -29,14 +29,14 @@ function buildManifest(config) {
       catalogs.push({
         type: 'movie',
         id: catalogId(platform.id, 'movies'),
-        name: `${platform.emoji} ${platform.name} · Películas nuevas`,
+        name: `${platform.name} Nuevas`,
       });
     }
     if (cfg.content.includes('series')) {
       catalogs.push({
         type: 'series',
         id: catalogId(platform.id, 'series'),
-        name: `${platform.emoji} ${platform.name} · Series nuevas`,
+        name: `${platform.name} Nuevas`,
       });
     }
   }
