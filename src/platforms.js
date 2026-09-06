@@ -25,7 +25,9 @@ const PLATFORMS = [
   { id: 'movistarficcion', name: 'Movistar Plus+ Ficción Total', slug: 'movistar-plus-plus-ficcion-total', confidence: 'verificado', emoji: '🟢' },
   { id: 'skyshowtime', name: 'SkyShowtime', slug: 'skyshowtime', confidence: 'verificado', emoji: '🟡' },
   { id: 'filmin', name: 'Filmin', slug: 'filmin', confidence: 'verificado', emoji: '🟠' },
-  { id: 'paramountplus', name: 'Paramount+', slug: 'paramount-plus', confidence: 'probable', emoji: '🔵' },
+  // Paramount+ ELIMINADO: confirmado con logs reales (404 constante) y
+  // con el listado completo de proveedores de JustWatch España, que no
+  // lo incluye como servicio independiente. No es un fallo del addon.
   { id: 'rakutentv', name: 'Rakuten TV', slug: 'rakuten-tv', confidence: 'verificado', emoji: '🟤' },
   { id: 'atresplayer', name: 'Atresplayer', slug: 'atres-player', confidence: 'verificado', emoji: '🟢' },
 ];
